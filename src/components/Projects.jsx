@@ -4,7 +4,7 @@ const projects = [
     description:
       "Designed a website that helps users discover and explore local UMKM businesses through an intuitive interface, clear navigation, and an accessible user experience.",
     tags: ["UI/UX", "Figma", "Prototype"],
-    image: "/public/assets/teroka-app.png",
+    image: "/assets/teroka-app.png",
     website: "https://teroka-app.vercel.app/",
     github: "https://github.com/aliimndev/teroka-app.git",
   },
@@ -13,7 +13,7 @@ const projects = [
     description:
       "Designed an AI-powered movie recommendation platform that helps users discover films based on their preferences through an intuitive and personalized user experience.",
     tags: ["UI/UX", "Figma", "Prototype"],
-    image: "/public/assets/movies-ai.png",
+    image: "/assets/movies-ai.png",
     website: "https://wemoviesai.vercel.app/",
     github: "https://github.com/aliimndev/capstone-project.git",
   },
