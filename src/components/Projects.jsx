@@ -13,7 +13,7 @@ const projects = [
     description:
       "Designed an AI-powered movie recommendation platform that helps users discover films based on their preferences through an intuitive and personalized user experience.",
     tags: ["UI/UX", "Figma", "Prototype"],
-    image: "/assets/movies-ai.png",
+    image: "/assets/wemoviesai.png",
     website: "https://wemoviesai.vercel.app/",
     github: "https://github.com/aliimndev/capstone-project.git",
   },
