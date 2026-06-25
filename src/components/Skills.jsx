@@ -18,7 +18,10 @@ const skills = [
 
 function Skills() {
   return (
-    <section id="skills" className="scroll-mt-24 border-t border-black/10 dark:border-white/10 overflow-hidden">
+    <section
+      id="skills"
+      className="scroll-mt-24 border-t border-black/10 dark:border-white/10 overflow-hidden"
+    >
       <div className="mx-auto max-w-6xl px-5 py-24 md:px-8">
         <div className="max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-black/55 dark:text-white/55">
@@ -28,7 +31,7 @@ function Skills() {
             Tools for analysis, visualization, and digital experiences.
           </h2>
         </div>
-        
+
         {/* 1 baris dengan animasi sliding pelan */}
         <div className="mt-12 overflow-hidden">
           <div className="animate-slideSlow flex gap-3 w-max">
@@ -62,11 +65,11 @@ function Skills() {
             transform: translateX(-50%);
           }
         }
-        
+
         .animate-slideSlow {
           animation: slideSlow 30s linear infinite;
         }
-        
+
         .animate-slideSlow:hover {
           animation-play-state: paused;
         }

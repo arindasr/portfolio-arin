@@ -22,7 +22,10 @@ const projects = [
 
 function Projects() {
   return (
-    <section id="projects" className="scroll-mt-24 border-t border-black/10 dark:border-white/10">
+    <section
+      id="projects"
+      className="scroll-mt-24 border-t border-black/10 dark:border-white/10"
+    >
       <div className="mx-auto max-w-6xl px-5 py-24 md:px-8">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-2xl">
@@ -48,7 +51,7 @@ function Projects() {
           {projects.map((project) => (
             <article
               key={project.title}
-              className="flex min-h-72 w-full flex-col justify-between border border-black/15 p-6 transition hover:-translate-y-1 hover:border-black hover:shadow-[10px_10px_0_#000] dark:border-white/15 dark:hover:border-white dark:hover:shadow-[10px_10px_0_#fff] lg:w-[calc(33.333%-0.833rem)]"
+              className="flex min-h-72 w-full flex-col justify-between border border-black/15 p-6 transition hover:-translate-y-1 hover:border-black hover:shadow-[10px_10px_0_#000] dark:border-white/15 dark:hover:border-white dark:hover:shadow-[10px_10px_0_#fff] lg:w-[calc(50%-0.625rem)]"
             >
               {/* Gambar – hanya menjadi link jika ada website */}
               {project.image &&
@@ -62,14 +65,14 @@ function Projects() {
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="h-40 w-full rounded object-cover"
+                      className="h-56 w-full rounded object-cover"
                     />
                   </a>
                 ) : (
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="mb-5 h-40 w-full rounded object-cover"
+                    className="mb-5 h-56 w-full rounded object-cover"
                   />
                 ))}
 
