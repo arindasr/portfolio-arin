@@ -71,6 +71,14 @@ function Navbar({ isDarkMode, onToggleTheme }) {
         href: section.href,
         rect: section.element.getBoundingClientRect(),
       }));
+      const firstSection = sectionRects[0];
+
+      if (firstSection && firstSection.rect.top > markerY) {
+        setActiveHref((currentActiveHref) =>
+          currentActiveHref === "" ? currentActiveHref : "",
+        );
+        return;
+      }
 
       const isAtPageBottom =
         window.innerHeight + window.scrollY >=
@@ -130,6 +138,11 @@ function Navbar({ isDarkMode, onToggleTheme }) {
     const handleHashChange = () => {
       if (navItems.some((item) => item.href === window.location.hash)) {
         setActiveHref(window.location.hash);
+        return;
+      }
+
+      if (!window.location.hash || window.location.hash === "#home") {
+        setActiveHref("");
       }
     };
 

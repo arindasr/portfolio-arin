@@ -1,5 +1,6 @@
-import profile from "/public/assets/profile.jpg";
 import Reveal from "./Reveal";
+
+const profile = "/assets/profile.jpg";
 
 function Hero() {
   return (
