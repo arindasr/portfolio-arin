@@ -9,6 +9,7 @@ function Reveal({
   threshold = 0.18,
   rootMargin = "0px 0px -12% 0px",
   once = false,
+  enterOnMount = false,
   ...props
 }) {
   const elementRef = useRef(null);
@@ -31,6 +32,14 @@ function Reveal({
 
     if (prefersReducedMotion || !("IntersectionObserver" in window)) {
       return undefined;
+    }
+
+    if (enterOnMount) {
+      const frameId = window.requestAnimationFrame(() => {
+        setIsVisible(true);
+      });
+
+      return () => window.cancelAnimationFrame(frameId);
     }
 
     const currentElement = elementRef.current;
@@ -59,7 +68,7 @@ function Reveal({
     observer.observe(currentElement);
 
     return () => observer.disconnect();
-  }, [once, rootMargin, threshold]);
+  }, [enterOnMount, once, rootMargin, threshold]);
 
   return (
     <Component

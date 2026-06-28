@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -9,54 +9,21 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 function App() {
-  const hasMountedTheme = useRef(false);
-  const themeTransitionTimeoutRef = useRef(null);
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    const savedTheme = localStorage.getItem("theme");
-
-    if (savedTheme) {
-      return savedTheme === "dark";
-    }
-
-    return false;
-  });
-
   useEffect(() => {
     const root = document.documentElement;
 
-    root.classList.toggle("dark", isDarkMode);
-    root.style.colorScheme = isDarkMode ? "dark" : "light";
-    localStorage.setItem("theme", isDarkMode ? "dark" : "light");
-
-    if (!hasMountedTheme.current) {
-      hasMountedTheme.current = true;
-      return undefined;
-    }
-
-    root.classList.add("theme-switching");
-    window.clearTimeout(themeTransitionTimeoutRef.current);
-    themeTransitionTimeoutRef.current = window.setTimeout(() => {
-      root.classList.remove("theme-switching");
-    }, 320);
-
-    return undefined;
-  }, [isDarkMode]);
-
-  useEffect(() => {
-    return () => {
-      window.clearTimeout(themeTransitionTimeoutRef.current);
-      document.documentElement.classList.remove("theme-switching");
-    };
+    root.classList.remove("dark", "theme-switching");
+    root.style.colorScheme = "light";
+    localStorage.setItem("theme", "light");
   }, []);
 
   return (
-    <div
-      className={`min-h-screen bg-white text-black transition-colors duration-300 dark:bg-zinc-950 dark:text-zinc-50 ${isDarkMode ? "dark" : ""}`}
-    >
-      <Navbar
-        isDarkMode={isDarkMode}
-        onToggleTheme={() => setIsDarkMode((isDark) => !isDark)}
+    <div className="relative min-h-screen overflow-x-clip bg-zinc-50 text-zinc-950 transition-colors duration-300">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(212,212,216,0.45),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(228,228,231,0.8),transparent_28%)]"
       />
+      <Navbar />
       <main>
         <Hero />
         <About />

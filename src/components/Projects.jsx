@@ -26,27 +26,23 @@ function Projects() {
   return (
     <section
       id="projects"
-      className="scroll-mt-24 border-t border-black/10 dark:border-white/10"
+      className="scroll-mt-24 border-t border-zinc-200/80 dark:border-zinc-800/80"
     >
       <div className="mx-auto max-w-6xl px-5 py-24 md:px-8">
-        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <Reveal as="div" variant="left" className="max-w-2xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-black/55 dark:text-white/55">
+        <div className="flex flex-col items-end gap-4 text-right">
+          <Reveal as="div" variant="right" className="max-w-2xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-zinc-500 dark:text-zinc-400">
               Projects
             </p>
-            <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-              Things I've Built.
-            </h2>
           </Reveal>
+
           <Reveal
-            as="a"
-            delay={120}
-            href="https://github.com/arindasr"
-            target="_blank"
-            rel="noreferrer"
-            className="text-sm font-semibold underline decoration-black/30 underline-offset-4 transition hover:decoration-black dark:decoration-white/30 dark:hover:decoration-white"
+            as="h2"
+            variant="right"
+            className="max-w-2xl text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl"
           >
-            View GitHub
+            Things I&apos;ve <span className="text-highlight-muted">built</span>
+            .
           </Reveal>
         </div>
 
@@ -58,7 +54,7 @@ function Projects() {
               key={project.title}
               variant="soft"
               delay={index * 100}
-              className="flex min-h-72 w-full flex-col justify-between border border-black/15 p-6 transition hover:-translate-y-1 hover:border-black hover:shadow-[10px_10px_0_#000] dark:border-white/15 dark:hover:border-white dark:hover:shadow-[10px_10px_0_#fff] lg:w-[calc(50%-0.625rem)]"
+              className="flex min-h-72 w-full flex-col justify-between rounded-[2rem] border border-zinc-200 bg-white/75 p-6 transition hover:-translate-y-1 hover:border-zinc-300 hover:shadow-[10px_10px_0_rgba(113,113,122,0.16)] dark:border-zinc-800 dark:bg-zinc-900/70 dark:hover:border-zinc-700 dark:hover:shadow-[10px_10px_0_rgba(161,161,170,0.14)] lg:w-[calc(50%-0.625rem)]"
             >
               {/* Gambar – hanya menjadi link jika ada website */}
               {project.image &&
@@ -87,7 +83,7 @@ function Projects() {
                 <h3 className="text-2xl font-bold tracking-tight">
                   {project.title}
                 </h3>
-                <p className="mt-5 leading-7 text-black/65 dark:text-white/65">
+                <p className="mt-5 leading-7 text-zinc-600 dark:text-zinc-300">
                   {project.description}
                 </p>
               </div>
@@ -97,7 +93,7 @@ function Projects() {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="border border-black/15 px-3 py-1 text-xs font-semibold text-black/65 dark:border-white/15 dark:text-white/65"
+                      className="rounded-full border border-zinc-200 bg-zinc-100/80 px-3 py-1 text-xs font-semibold text-zinc-600 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300"
                     >
                       {tag}
                     </span>
@@ -110,7 +106,7 @@ function Projects() {
                     href={project.github}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-1 text-xs font-semibold text-black/65 underline decoration-black/30 underline-offset-4 transition hover:text-black hover:decoration-black dark:text-white/65 dark:decoration-white/30 dark:hover:text-white dark:hover:decoration-white"
+                    className="inline-flex items-center gap-1 text-xs font-semibold text-zinc-600 underline decoration-zinc-300 underline-offset-4 transition hover:text-zinc-950 hover:decoration-zinc-500 dark:text-zinc-300 dark:decoration-zinc-700 dark:hover:text-zinc-50 dark:hover:decoration-zinc-400"
                     title="Lihat kode di GitHub"
                   >
                     <svg

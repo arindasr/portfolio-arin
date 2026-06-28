@@ -4,21 +4,26 @@ function About() {
   return (
     <section
       id="about"
-      className="scroll-mt-24 border-t border-black/10 dark:border-white/10"
+      className="scroll-mt-24 border-t border-zinc-200/80 dark:border-zinc-800/80"
     >
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-24 md:grid-cols-[0.8fr_1.2fr] md:px-8">
         <Reveal as="div" variant="left">
-          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-black/55 dark:text-white/55">
+          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-zinc-500 dark:text-zinc-400">
             About
           </p>
-          <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-            Turning ideas into digital experiences and meaningful insights.
+          <h2 className="mt-4 text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
+            Turning ideas into
+            <br />
+            <span className="text-highlight-muted">digital experiences</span>
+            <br />
+            and{" "}
+            <span className="text-highlight-muted">meaningful insights</span>.
           </h2>
         </Reveal>
         <Reveal
           as="div"
           delay={120}
-          className="space-y-6 text-lg leading-8 text-black/70 dark:text-white/70"
+          className="space-y-6 text-lg leading-8 text-zinc-600 dark:text-zinc-300"
         >
           <p>
             I am passionate about Front-End Development, UI/UX Design, and Data

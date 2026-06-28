@@ -22,15 +22,21 @@ function Skills() {
   return (
     <section
       id="skills"
-      className="scroll-mt-24 border-t border-black/10 dark:border-white/10 overflow-hidden"
+      className="scroll-mt-24 overflow-hidden border-t border-zinc-200/80 dark:border-zinc-800/80"
     >
       <div className="mx-auto max-w-6xl px-5 py-24 md:px-8">
-        <Reveal as="div" variant="left" className="max-w-2xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-black/55 dark:text-white/55">
+        <Reveal
+          as="div"
+          variant="right"
+          className="ml-auto max-w-2xl text-right"
+        >
+          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-zinc-500 dark:text-zinc-400">
             Skills
           </p>
-          <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-            Tools for analysis, visualization, and digital experiences.
+          <h2 className="mt-4 text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
+            Tools for <span className="text-highlight-muted">analysis</span>,{" "}
+            <span className="text-highlight-muted">visualization</span>, and{" "}
+            <span className="text-highlight-muted">digital experiences</span>.
           </h2>
         </Reveal>
 
@@ -40,7 +46,7 @@ function Skills() {
             {skills.map((skill) => (
               <div
                 key={skill}
-                className="border border-black/15 px-4 py-4 text-center text-sm font-semibold whitespace-nowrap dark:border-white/15"
+                className="whitespace-nowrap rounded-full border border-zinc-200 bg-zinc-100/80 px-4 py-4 text-center text-sm font-semibold text-zinc-700 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300"
               >
                 {skill}
               </div>
@@ -49,7 +55,7 @@ function Skills() {
             {skills.map((skill) => (
               <div
                 key={`duplicate-${skill}`}
-                className="border border-black/15 px-4 py-4 text-center text-sm font-semibold whitespace-nowrap dark:border-white/15"
+                className="whitespace-nowrap rounded-full border border-zinc-200 bg-zinc-100/80 px-4 py-4 text-center text-sm font-semibold text-zinc-700 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300"
               >
                 {skill}
               </div>

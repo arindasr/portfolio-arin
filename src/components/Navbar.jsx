@@ -13,7 +13,6 @@ const navItems = [
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
 ];
 
 const SHRINK_SCROLL_Y = 96;
@@ -21,7 +20,7 @@ const EXPAND_SCROLL_Y = 24;
 const MIN_ACTIVE_MARKER_Y = 140;
 const ACTIVE_MARKER_RATIO = 0.35;
 
-function Navbar({ isDarkMode, onToggleTheme }) {
+function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeHref, setActiveHref] = useState(getInitialActiveHref);
@@ -174,13 +173,13 @@ function Navbar({ isDarkMode, onToggleTheme }) {
             scrolled
               ? // Floating pill state
                 "top-4 inset-x-5 mx-auto w-auto max-w-275 rounded-full " +
-                "shadow-[0_8px_32px_rgba(0,0,0,0.15)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.5)] " +
-                "bg-white/70 dark:bg-zinc-900/70 backdrop-blur-md " +
-                "border border-black/10 dark:border-white/10"
+                "shadow-[0_10px_35px_rgba(24,24,27,0.10)] dark:shadow-[0_10px_35px_rgba(0,0,0,0.45)] " +
+                "bg-white/72 dark:bg-zinc-900/72 backdrop-blur-md " +
+                "border border-zinc-200/80 dark:border-zinc-800/80"
               : // Full-width state
                 "top-0 left-0 w-full rounded-none " +
-                "bg-white/95 dark:bg-zinc-950/95 backdrop-blur " +
-                "border-b border-black/10 dark:border-white/10"
+                "bg-zinc-50/92 dark:bg-zinc-950/92 backdrop-blur " +
+                "border-b border-zinc-200/80 dark:border-zinc-800/80"
           }
         `}
       >
@@ -194,14 +193,14 @@ function Navbar({ isDarkMode, onToggleTheme }) {
           {/* Logo */}
           <a
             href="#home"
-            className={`
-              font-bold tracking-[0.18em] text-zinc-950 dark:text-zinc-50
-              transition-all duration-300 hover:text-zinc-600 dark:hover:text-zinc-300
-              ${scrolled ? "text-sm" : "text-base"}
-            `}
+            className="transition-all duration-300 hover:opacity-80"
             aria-label="Arinda Setyo Rini home"
           >
-            ASR
+            <img
+              src="/assets/logo2.png"
+              alt="Arinda Setyo Rini"
+              className={`${scrolled ? "h-8" : "h-10"} w-auto object-contain`}
+            />
           </a>
 
           {/* Desktop nav links */}
@@ -217,12 +216,12 @@ function Navbar({ isDarkMode, onToggleTheme }) {
                   aria-current={isActive ? "page" : undefined}
                   className={`
                     relative pb-1 font-medium transition-all duration-300
-                    hover:text-black dark:hover:text-white
+                    hover:text-zinc-950 dark:hover:text-zinc-50
                     ${scrolled ? "text-xs" : "text-sm"}
                     ${
                       isActive
-                        ? "text-black dark:text-white after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-black dark:after:bg-white"
-                        : "text-black/70 dark:text-white/70"
+                        ? "text-zinc-950 dark:text-zinc-50 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-zinc-500 dark:after:bg-zinc-400"
+                        : "text-zinc-500 dark:text-zinc-400"
                     }
                   `}
                 >
@@ -234,28 +233,27 @@ function Navbar({ isDarkMode, onToggleTheme }) {
 
           {/* Right controls */}
           <div className="flex items-center gap-2">
-            {/* Theme toggle */}
-            <button
-              type="button"
+            <a
+              href="#contact"
               className={`
-                inline-flex items-center justify-center border font-semibold
-                transition-all duration-300
-                border-black dark:border-white/70
-                hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black
-                ${scrolled ? "h-7 w-7 text-sm rounded-full" : "h-10 w-10 text-base"}
+                inline-flex items-center justify-center gap-2 rounded-full border border-zinc-900
+                bg-zinc-900 font-semibold text-white transition-all duration-300
+                hover:-translate-y-0.5 hover:border-zinc-300 hover:bg-white/70 hover:text-zinc-700
+                dark:border-zinc-100 dark:bg-zinc-100 dark:text-zinc-950 dark:hover:border-zinc-700 dark:hover:bg-zinc-900/70 dark:hover:text-zinc-200
+                ${scrolled ? "px-4 py-2 text-xs" : "px-5 py-2.5 text-sm"}
               `}
-              onClick={onToggleTheme}
-              aria-label={`Switch to ${isDarkMode ? "light" : "dark"} mode`}
-              title={`Switch to ${isDarkMode ? "light" : "dark"} mode`}
             >
-              {isDarkMode ? "☼" : "☾"}
-            </button>
+              <span>Let's Connect</span>
+              <span aria-hidden="true" className="text-base leading-none">
+                ↗
+              </span>
+            </a>
 
             {/* Mobile hamburger — hidden when scrolled to pill */}
             {!scrolled && (
               <button
                 type="button"
-                className="inline-flex h-10 w-10 items-center justify-center border border-black text-xl font-light dark:border-white/70 md:hidden"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-zinc-300 bg-white/70 text-xl font-light text-zinc-700 md:hidden"
                 onClick={() => setIsOpen((open) => !open)}
                 aria-label="Toggle navigation menu"
                 aria-expanded={isOpen}
@@ -268,7 +266,7 @@ function Navbar({ isDarkMode, onToggleTheme }) {
 
         {/* Mobile dropdown — only in full-width state */}
         {isOpen && !scrolled && (
-          <div className="border-t border-black/10 bg-white px-5 py-4 dark:border-white/10 dark:bg-zinc-950 md:hidden">
+          <div className="border-t border-zinc-200/80 bg-zinc-50/95 px-5 py-4 md:hidden">
             <div className="mx-auto flex max-w-6xl flex-col gap-4">
               {navItems.map((item) => {
                 const isActive = activeHref === item.href;
@@ -279,8 +277,8 @@ function Navbar({ isDarkMode, onToggleTheme }) {
                     href={item.href}
                     className={`w-fit border-b-2 pb-1 text-base font-medium transition-colors duration-300 ${
                       isActive
-                        ? "border-black text-black dark:border-white dark:text-white"
-                        : "border-transparent text-black/75 dark:text-white/75"
+                        ? "border-zinc-500 text-zinc-950 dark:border-zinc-400 dark:text-zinc-50"
+                        : "border-transparent text-zinc-500 dark:text-zinc-400"
                     }`}
                     onClick={() => {
                       setActiveHref(item.href);
