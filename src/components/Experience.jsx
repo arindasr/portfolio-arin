@@ -5,19 +5,19 @@ const experiences = [
     title: "PIJAK x IBM SkillsBuild Participant",
     period: "February 2026 - Present",
     description:
-      "Gained hands-on experience in Python programming and AI implementation, and developed a machine learning-based movie recommendation system called WeMovies AI.",
+      "Participated in a project-based AI program, developing Python skills and building a machine learning–based movie recommendation system.",
   },
   {
     title: "Laboratory Teaching Assistant",
     period: "February 2026 - Present",
     description:
-      "Mentored students in Operating Systems and Big Data processing, collaborating with lecturers to manage laboratory activities and support effective learning experiences.",
+      "Mentored students in Operating Systems and Big Data while supporting laboratory activities and collaborative learning.",
   },
   {
     title: "Secretary of BEM FILKOM",
     period: "June 2025 - Present",
     description:
-      "Managed digital administration systems, systematically archived official documents, and ensured efficient internal information flow across organizational divisions.",
+      "Managed digital administration, organized official documents, and supported efficient communication across the organization.",
   },
 ];
 
@@ -33,9 +33,10 @@ function Experience() {
             Experience
           </p>
           <h2 className="mt-4 text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
-            Experiences that shaped my{" "}
+            Experiences that shaped my
+            <br className="sm:hidden" />{" "}
             <span className="text-highlight-muted">growth</span>
-            <br />
+            <br className="hidden sm:block" />
             and <span className="text-highlight-muted">skills</span>.
           </h2>
         </Reveal>

@@ -7,37 +7,22 @@ function Hero() {
     <section id="home" className="scroll-mt-24">
       <div className="mx-auto grid min-h-[calc(100vh-73px)] max-w-6xl items-center gap-12 px-5 py-20 md:grid-cols-[1.25fr_0.75fr] md:px-8">
         <div>
-          <Reveal
-            as="p"
-            variant="left"
-            enterOnMount
-            className="mb-5 text-sm font-semibold uppercase tracking-[0.28em] text-zinc-500 dark:text-zinc-400"
-          >
-            Portfolio
-          </Reveal>
-          <Reveal
-            as="h1"
-            variant="left"
-            enterOnMount
-            delay={80}
-            className="max-w-4xl text-5xl font-extrabold tracking-tight text-zinc-950 sm:text-6xl lg:text-7xl dark:text-zinc-50"
-          >
-            Arinda Setyo Rini
+          <Reveal as="div" variant="left">
+            <p className="mb-5 text-sm font-semibold uppercase tracking-[0.28em] text-zinc-500 dark:text-zinc-400">
+              Portfolio
+            </p>
+            <h1 className="max-w-4xl text-5xl font-extrabold tracking-tight text-zinc-950 sm:text-6xl lg:text-7xl dark:text-zinc-50">
+              Arinda Setyo Rini
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-600 dark:text-zinc-300">
+              Computer Science Student passionate about Front-End Development,
+              UI/UX Design, and Data Analytics.
+            </p>
           </Reveal>
 
           <Reveal
-            as="p"
             variant="left"
-            enterOnMount
-            delay={200}
-            className="mt-6 max-w-2xl text-lg leading-8 text-zinc-600 dark:text-zinc-300"
-          >
-            Computer Science Student passionate about Front-End Development,
-            UI/UX Design, and Data Analytics.
-          </Reveal>
-          <Reveal
-            enterOnMount
-            delay={260}
+            delay={120}
             className="mt-10 flex flex-col gap-3 sm:flex-row"
           >
             <a
@@ -58,8 +43,7 @@ function Hero() {
 
         <Reveal
           variant="right"
-          enterOnMount
-          delay={160}
+          delay={120}
           className="rounded-[2rem] border border-zinc-200 bg-white/75 p-8 shadow-[0_20px_60px_rgba(24,24,27,0.06)] transition hover:-translate-y-1 hover:border-zinc-300 hover:shadow-[12px_12px_0_rgba(113,113,122,0.18)] dark:border-zinc-800 dark:bg-zinc-900/70 dark:shadow-[0_20px_60px_rgba(0,0,0,0.28)] dark:hover:border-zinc-700 dark:hover:shadow-[12px_12px_0_rgba(161,161,170,0.16)]"
         >
           <div className="aspect-square overflow-hidden rounded-2xl bg-zinc-200 dark:bg-zinc-800">

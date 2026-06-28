@@ -1,19 +1,22 @@
 import { useState, useEffect } from "react";
 
-const getInitialActiveHref = () => {
-  if (typeof window === "undefined") return "";
-
-  return navItems.some((item) => item.href === window.location.hash)
-    ? window.location.hash
-    : "";
-};
-
 const navItems = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
 ];
+
+const contactHref = "#contact";
+const trackedSectionHrefs = [...navItems.map((item) => item.href), contactHref];
+
+const getInitialActiveHref = () => {
+  if (typeof window === "undefined") return "";
+
+  return trackedSectionHrefs.includes(window.location.hash)
+    ? window.location.hash
+    : "";
+};
 
 const SHRINK_SCROLL_Y = 96;
 const EXPAND_SCROLL_Y = 24;
@@ -51,10 +54,10 @@ function Navbar() {
   }, []);
 
   useEffect(() => {
-    const sections = navItems
-      .map((item) => ({
-        href: item.href,
-        element: document.querySelector(item.href),
+    const sections = trackedSectionHrefs
+      .map((href) => ({
+        href,
+        element: document.querySelector(href),
       }))
       .filter((section) => section.element);
 
@@ -135,7 +138,7 @@ function Navbar() {
     };
 
     const handleHashChange = () => {
-      if (navItems.some((item) => item.href === window.location.hash)) {
+      if (trackedSectionHrefs.includes(window.location.hash)) {
         setActiveHref(window.location.hash);
         return;
       }
@@ -234,12 +237,18 @@ function Navbar() {
           {/* Right controls */}
           <div className="flex items-center gap-2">
             <a
-              href="#contact"
+              href={contactHref}
+              onClick={() => setActiveHref(contactHref)}
+              aria-current={activeHref === contactHref ? "page" : undefined}
               className={`
-                inline-flex items-center justify-center gap-2 rounded-full border border-zinc-900
-                bg-zinc-900 font-semibold text-white transition-all duration-300
+                inline-flex items-center justify-center gap-2 rounded-full border font-semibold transition-all duration-300
+                ${
+                  activeHref === contactHref
+                    ? "border-zinc-300 bg-white/70 text-zinc-700 dark:border-zinc-700 dark:bg-zinc-900/70 dark:text-zinc-200"
+                    : "border-zinc-900 bg-zinc-900 text-white dark:border-zinc-100 dark:bg-zinc-100 dark:text-zinc-950"
+                }
                 hover:-translate-y-0.5 hover:border-zinc-300 hover:bg-white/70 hover:text-zinc-700
-                dark:border-zinc-100 dark:bg-zinc-100 dark:text-zinc-950 dark:hover:border-zinc-700 dark:hover:bg-zinc-900/70 dark:hover:text-zinc-200
+                dark:hover:border-zinc-700 dark:hover:bg-zinc-900/70 dark:hover:text-zinc-200
                 ${scrolled ? "px-4 py-2 text-xs" : "px-5 py-2.5 text-sm"}
               `}
             >
