@@ -32,8 +32,8 @@ function Hero() {
               View Projects
             </a>
             <a
-              href="/assets/cv-arinda.pdf"
-              download="cv-arinda.pdf"
+              href="/assets/CV-ArindaSR.pdf"
+              download="CV-ArindaSR.pdf"
               className="inline-flex items-center justify-center rounded-full border border-zinc-300 bg-white/70 px-6 py-3 text-sm font-semibold text-zinc-700 transition-all duration-300 hover:border-zinc-900 hover:bg-zinc-900 hover:text-white dark:border-zinc-700 dark:bg-zinc-900/70 dark:text-zinc-200 dark:hover:border-zinc-100 dark:hover:bg-zinc-100 dark:hover:text-zinc-950"
             >
               Download CV
@@ -44,7 +44,7 @@ function Hero() {
         <Reveal
           variant="right"
           delay={120}
-          className="rounded-[2rem] border border-zinc-200 bg-white/75 p-8 shadow-[0_20px_60px_rgba(24,24,27,0.06)] transition hover:-translate-y-1 hover:border-zinc-300 hover:shadow-[12px_12px_0_rgba(113,113,122,0.18)] dark:border-zinc-800 dark:bg-zinc-900/70 dark:shadow-[0_20px_60px_rgba(0,0,0,0.28)] dark:hover:border-zinc-700 dark:hover:shadow-[12px_12px_0_rgba(161,161,170,0.16)]"
+          className="rounded-4xl border border-zinc-200 bg-white/75 p-8 shadow-[0_20px_60px_rgba(24,24,27,0.06)] transition hover:-translate-y-1 hover:border-zinc-300 hover:shadow-[12px_12px_0_rgba(113,113,122,0.18)] dark:border-zinc-800 dark:bg-zinc-900/70 dark:shadow-[0_20px_60px_rgba(0,0,0,0.28)] dark:hover:border-zinc-700 dark:hover:shadow-[12px_12px_0_rgba(161,161,170,0.16)]"
         >
           <div className="aspect-square overflow-hidden rounded-2xl bg-zinc-200 dark:bg-zinc-800">
             <img

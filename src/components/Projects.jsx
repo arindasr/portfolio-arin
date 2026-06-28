@@ -54,7 +54,7 @@ function Projects() {
               key={project.title}
               variant="soft"
               delay={index * 100}
-              className="flex min-h-72 w-full flex-col justify-between rounded-[2rem] border border-zinc-200 bg-white/75 p-6 transition hover:-translate-y-1 hover:border-zinc-300 hover:shadow-[10px_10px_0_rgba(113,113,122,0.16)] dark:border-zinc-800 dark:bg-zinc-900/70 dark:hover:border-zinc-700 dark:hover:shadow-[10px_10px_0_rgba(161,161,170,0.14)] lg:w-[calc(50%-0.625rem)]"
+              className="flex min-h-72 w-full flex-col justify-between rounded-4xl border border-zinc-200 bg-white/75 p-6 transition hover:-translate-y-1 hover:border-zinc-300 hover:shadow-[10px_10px_0_rgba(113,113,122,0.16)] dark:border-zinc-800 dark:bg-zinc-900/70 dark:hover:border-zinc-700 dark:hover:shadow-[10px_10px_0_rgba(161,161,170,0.14)] lg:w-[calc(50%-0.625rem)]"
             >
               {/* Gambar – hanya menjadi link jika ada website */}
               {project.image &&
