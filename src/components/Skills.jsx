@@ -64,7 +64,7 @@ function Skills() {
         </Reveal>
       </div>
 
-      <style jsx>{`
+      <style>{`
         @keyframes slideSlow {
           0% {
             transform: translateX(0);

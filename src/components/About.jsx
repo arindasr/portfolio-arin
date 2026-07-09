@@ -23,7 +23,7 @@ function About() {
         <Reveal
           as="div"
           delay={120}
-          className="space-y-6 text-lg leading-8 text-zinc-600 dark:text-zinc-300 text-justify"
+          className="space-y-6 text-base sm:text-lg leading-8 text-zinc-600 dark:text-zinc-300 text-justify"
         >
           <p>
             I am passionate about Front-End Development, UI/UX Design, and Data
