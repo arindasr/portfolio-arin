@@ -11,7 +11,7 @@ const projects = [
     github: "https://github.com/aliimndev/teroka-app.git",
   },
   {
-    title: "WeMoviesAI",
+    title: "WeMovies AI",
     description:
       "Designed an AI-powered movie recommendation platform that helps users discover films based on their preferences through an intuitive and personalized user experience.",
     tags: ["UI/UX", "Figma", "Prototype"],
@@ -19,7 +19,7 @@ const projects = [
     website: "https://wemoviesai.vercel.app/",
     github: "https://github.com/aliimndev/capstone-project.git",
   },
-  // Proyek "SOON" (Competition Mobile App Design) telah dihapus
+  
 ];
 
 function Projects() {
@@ -100,7 +100,7 @@ function Projects() {
                   ))}
                 </div>
 
-                {/* Ikon GitHub hanya muncul jika link repo GitHub ada */}
+               
                 {project.github && (
                   <a
                     href={project.github}
