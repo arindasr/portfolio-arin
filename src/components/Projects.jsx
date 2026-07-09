@@ -83,7 +83,7 @@ function Projects() {
                 <h3 className="text-2xl font-bold tracking-tight">
                   {project.title}
                 </h3>
-                <p className="mt-5 leading-7 text-zinc-600 dark:text-zinc-300">
+                <p className="mt-5 leading-7 text-zinc-600 dark:text-zinc-300 text-justify">
                   {project.description}
                 </p>
               </div>

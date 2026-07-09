@@ -36,6 +36,7 @@ function Experience() {
             Experiences that shaped my
             <br className="sm:hidden" />{" "}
             <span className="text-highlight-muted">growth</span>
+            {" "}
             <br className="hidden sm:block" />
             and <span className="text-highlight-muted">skills</span>.
           </h2>
@@ -80,7 +81,7 @@ function Experience() {
               </div>
 
               <div className="col-start-2 row-start-2 md:col-start-3 md:row-start-1 md:pr-2">
-                <p className="leading-8 text-zinc-600 dark:text-zinc-300 sm:text-lg">
+                <p className="leading-8 text-zinc-600 dark:text-zinc-300 sm:text-lg text-justify">
                   {experience.description}
                 </p>
               </div>

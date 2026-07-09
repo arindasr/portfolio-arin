@@ -40,7 +40,7 @@ function Contact() {
             <span className="text-highlight-muted">build something</span>{" "}
             meaningful.
           </h2>
-          <p className="mt-6 leading-7 text-zinc-600 dark:text-zinc-300">
+          <p className="mt-6 leading-7 text-zinc-600 dark:text-zinc-300 text-justify">
             I'm open to freelance projects, collaborations, and opportunities to
             create impactful digital experiences and meaningful insights.
           </p>
