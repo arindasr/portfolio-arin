@@ -243,9 +243,13 @@ function Navbar() {
               className={`
                 items-center justify-center gap-2 rounded-full border font-semibold transition-all duration-300
                 ${scrolled ? "inline-flex" : "hidden md:inline-flex"}
-                border-zinc-300 bg-white/70 text-zinc-700 dark:border-zinc-700 dark:bg-zinc-900/70 dark:text-zinc-200
-                hover:-translate-y-0.5 hover:border-zinc-400 hover:bg-white hover:text-zinc-900
-                dark:hover:border-zinc-600 dark:hover:bg-zinc-800 dark:hover:text-zinc-100
+                ${
+                  activeHref === contactHref
+                    ? "border-zinc-300 bg-white/70 text-zinc-700 dark:border-zinc-700 dark:bg-zinc-900/70 dark:text-zinc-200"
+                    : "border-zinc-900 bg-zinc-900 text-white dark:border-zinc-100 dark:bg-zinc-100 dark:text-zinc-950 max-md:border-zinc-300 max-md:bg-white/70 max-md:text-zinc-700 dark:max-md:border-zinc-700 dark:max-md:bg-zinc-900/70 dark:max-md:text-zinc-200"
+                }
+                hover:-translate-y-0.5 hover:border-zinc-300 hover:bg-white/70 hover:text-zinc-700
+                dark:hover:border-zinc-700 dark:hover:bg-zinc-900/70 dark:hover:text-zinc-200
                 ${scrolled ? "px-4 py-2 text-xs" : "px-5 py-2.5 text-sm"}
               `}
             >
