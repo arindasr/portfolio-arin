@@ -276,7 +276,7 @@ function Navbar() {
         {/* Mobile dropdown — only in full-width state */}
         {isOpen && !scrolled && (
           <div className="border-t border-zinc-200/80 bg-zinc-50/95 px-5 py-4 md:hidden">
-            <div className="mx-auto flex max-w-6xl flex-col gap-4">
+            <div className="mx-auto flex max-w-6xl flex-col items-center gap-4">
               {navItems.map((item) => {
                 const isActive = activeHref === item.href;
 
@@ -284,10 +284,10 @@ function Navbar() {
                   <a
                     key={item.href}
                     href={item.href}
-                    className={`w-fit border-b-2 pb-1 text-base font-medium transition-colors duration-300 ${
+                    className={`border-b pb-1 text-base font-medium transition-colors duration-300 ${
                       isActive
                         ? "border-zinc-500 text-zinc-950 dark:border-zinc-400 dark:text-zinc-50"
-                        : "border-transparent text-zinc-500 dark:text-zinc-400"
+                        : "border-zinc-300 text-zinc-500 dark:border-zinc-600 dark:text-zinc-400"
                     }`}
                     onClick={() => {
                       setActiveHref(item.href);
