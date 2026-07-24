@@ -1,12 +1,7 @@
 import Reveal from "./Reveal";
 
 const experiences = [
-  {
-    title: "Secretary of BEM FILKOM",
-    period: "June 2025 - Present",
-    description:
-      "Managed digital administration, organized official documents, and supported efficient communication across the organization.",
-  },
+
   {
     title: "PIJAK x IBM SkillsBuild Participant",
     period: "February 2026 - July 2026",
@@ -18,6 +13,12 @@ const experiences = [
     period: "February 2026 - July 2026",
     description:
       "Mentored Semester 2 students in Operating Systems and Semester 4 students in Big Data while supporting laboratory activities and collaborative learning.",
+  },
+  {
+    title: "Secretary of BEM FILKOM",
+    period: "June 2025 - July 2026",
+    description:
+      "Managed digital administration, organized official documents, and supported efficient communication across the organization.",
   },
 ];
 
