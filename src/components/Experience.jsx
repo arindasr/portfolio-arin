@@ -3,6 +3,12 @@ import Reveal from "./Reveal";
 const experiences = [
 
   {
+    title: "IT & Digital Media Intern at Kopo Village Government",
+    period: "July 2026 - Present",
+    description:
+      "Managed official website administration and designed visual media content to optimize public information services.",
+  },
+  {
     title: "PIJAK x IBM SkillsBuild Participant",
     period: "February 2026 - July 2026",
     description:
