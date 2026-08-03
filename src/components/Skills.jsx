@@ -40,7 +40,6 @@ function Skills() {
           </h2>
         </Reveal>
 
-        {/* 1 baris dengan animasi sliding pelan */}
         <Reveal delay={120} className="mt-12 overflow-hidden">
           <div className="animate-slideSlow flex gap-3 w-max">
             {skills.map((skill) => (
@@ -51,7 +50,6 @@ function Skills() {
                 {skill}
               </div>
             ))}
-            {/* Duplikat untuk efek infinite */}
             {skills.map((skill) => (
               <div
                 key={`duplicate-${skill}`}

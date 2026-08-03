@@ -165,7 +165,6 @@ function Navbar() {
 
   return (
     <>
-      {/* Keep a stable spacer so the page layout doesn't shift during navbar transitions */}
       <div className="h-18.25" aria-hidden="true" />
 
       <header
@@ -174,13 +173,11 @@ function Navbar() {
           transition-all duration-300 ease-in-out
           ${
             scrolled
-              ? // Floating pill state
-                "top-4 inset-x-5 mx-auto w-auto max-w-275 rounded-full " +
+              ? "top-4 inset-x-5 mx-auto w-auto max-w-275 rounded-full " +
                 "shadow-[0_10px_35px_rgba(24,24,27,0.10)] dark:shadow-[0_10px_35px_rgba(0,0,0,0.45)] " +
                 "bg-white/72 dark:bg-zinc-900/72 backdrop-blur-md " +
                 "border border-zinc-200/80 dark:border-zinc-800/80"
-              : // Full-width state
-                "top-0 left-0 w-full rounded-none " +
+              : "top-0 left-0 w-full rounded-none " +
                 "bg-zinc-50/92 dark:bg-zinc-950/92 backdrop-blur " +
                 "border-b border-zinc-200/80 dark:border-zinc-800/80"
           }
@@ -193,7 +190,6 @@ function Navbar() {
             ${scrolled ? "px-6 py-3 md:px-8" : "mx-auto max-w-6xl px-5 py-4 md:px-8"}
           `}
         >
-          {/* Logo */}
           <a
             href="#home"
             className="transition-all duration-300 hover:opacity-80"
@@ -206,7 +202,6 @@ function Navbar() {
             />
           </a>
 
-          {/* Desktop nav links */}
           <div className="hidden items-center gap-6 md:flex">
             {navItems.map((item) => {
               const isActive = activeHref === item.href;
@@ -234,7 +229,6 @@ function Navbar() {
             })}
           </div>
 
-          {/* Right controls */}
           <div className="flex items-center gap-2">
             <a
               href={contactHref}
@@ -259,7 +253,6 @@ function Navbar() {
               </span>
             </a>
 
-            {/* Mobile hamburger — hidden when scrolled to pill */}
             {!scrolled && (
               <button
                 type="button"
@@ -269,13 +262,11 @@ function Navbar() {
                 aria-expanded={isOpen}
               >
                 {isOpen ? (
-                // X icon
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <line x1="18" y1="6" x2="6" y2="18" />
                   <line x1="6" y1="6" x2="18" y2="18" />
                 </svg>
               ) : (
-                // Hamburger icon
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <line x1="3" y1="6" x2="21" y2="6" />
                   <line x1="3" y1="12" x2="21" y2="12" />
@@ -287,7 +278,6 @@ function Navbar() {
           </div>
         </nav>
 
-        {/* Mobile dropdown — only in full-width state */}
         {isOpen && !scrolled && (
           <div className="border-t border-zinc-200/80 bg-zinc-50/95 px-5 py-4 md:hidden">
             <div className="mx-auto flex max-w-6xl flex-col items-center gap-4">

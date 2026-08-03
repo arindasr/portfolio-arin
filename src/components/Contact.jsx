@@ -61,7 +61,6 @@ function Contact() {
                 delay={index * 90}
                 className="group flex flex-col justify-between gap-3 rounded-3xl border border-zinc-200 bg-white/75 p-5 transition hover:-translate-y-1 hover:border-zinc-300 hover:bg-zinc-900 hover:text-zinc-50 dark:border-zinc-800 dark:bg-zinc-900/70 dark:hover:border-zinc-700 dark:hover:bg-zinc-100 dark:hover:text-zinc-950 sm:flex-row sm:items-center"
               >
-                {/* Layout baru: logo di kiri, teks di kanan */}
                 <div className="flex w-full items-center justify-between">
                   <Icon className="h-5 w-5 text-zinc-400 transition group-hover:text-zinc-300 dark:text-zinc-500 dark:group-hover:text-zinc-700" />
                   <span className="font-semibold">{contact.label}</span>

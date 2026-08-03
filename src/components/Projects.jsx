@@ -46,7 +46,6 @@ function Projects() {
           </Reveal>
         </div>
 
-        {/* Container diubah dari grid ke flex agar card dua item bisa di-center */}
         <div className="mt-12 flex flex-wrap justify-center gap-5">
           {projects.map((project, index) => (
             <Reveal
@@ -56,7 +55,6 @@ function Projects() {
               delay={index * 100}
               className="flex min-h-72 w-full flex-col justify-between rounded-4xl border border-zinc-200 bg-white/75 p-6 transition hover:-translate-y-1 hover:border-zinc-300 hover:shadow-[10px_10px_0_rgba(113,113,122,0.16)] dark:border-zinc-800 dark:bg-zinc-900/70 dark:hover:border-zinc-700 dark:hover:shadow-[10px_10px_0_rgba(161,161,170,0.14)] lg:w-[calc(50%-0.625rem)]"
             >
-              {/* Gambar – hanya menjadi link jika ada website */}
               {project.image &&
                 (project.website ? (
                   <a
@@ -100,7 +98,6 @@ function Projects() {
                   ))}
                 </div>
 
-               
                 {project.github && (
                   <a
                     href={project.github}
