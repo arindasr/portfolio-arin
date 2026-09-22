@@ -19,7 +19,15 @@ const projects = [
     website: "https://wemoviesai.vercel.app/",
     github: "https://github.com/aliimndev/capstone-project.git",
   },
-  
+  {
+    title: "PAWKET",
+    description:
+      "A cute and minimalist pet tracking dashboard for loving pawrents. It helps track daily routines feeding schedules, hygiene checklists, and food stock notes.",
+    tags: ["React", "Tailwind CSS", "JavaScript"],
+    image: "/assets/pawket.png",
+    website: "https://paw-pocket.vercel.app/",
+    github: "https://github.com/arindasr/pawket.git",
+  },
 ];
 
 function Projects() {
