@@ -3,8 +3,14 @@ import Reveal from "./Reveal";
 const experiences = [
 
   {
+    title: "President of BEM FILKOM UNIDA",
+    period: "September 2026 - Present",
+    description:
+      "Leading the Faculty of Computer Science student executive board, overseeing organizational strategy, coordinating divisions, and representing students in academic and institutional matters.",
+  },
+  {
     title: "IT & Digital Media Intern at Kopo Village Government",
-    period: "July 2026 - Present",
+    period: "July 2026 - September 2026",
     description:
       "Managed official website administration and designed visual media content to optimize public information services.",
   },
@@ -21,7 +27,7 @@ const experiences = [
       "Mentored Semester 2 students in Operating Systems and Semester 4 students in Big Data while supporting laboratory activities and collaborative learning.",
   },
   {
-    title: "Secretary of BEM FILKOM",
+    title: "Secretary of BEM FILKOM UNIDA",
     period: "June 2025 - July 2026",
     description:
       "Managed digital administration, organized official documents, and supported efficient communication across the organization.",
