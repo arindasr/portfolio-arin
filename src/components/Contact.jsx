@@ -32,7 +32,7 @@ const contacts = [
 
 function Contact() {
   const formRef = useRef(null);
-  const [status, setStatus] = useState("idle"); // idle | loading | success | error
+  const [status, setStatus] = useState("idle");
   const [form, setForm] = useState({ from_name: "", from_email: "", message: "" });
 
   const handleChange = (e) => {
@@ -63,49 +63,51 @@ function Contact() {
       className="scroll-mt-24 border-t border-zinc-200/80 dark:border-zinc-800/80"
     >
       <div className="mx-auto max-w-6xl px-5 py-24 md:px-8">
-        <div className="grid gap-10 md:grid-cols-[0.9fr_1.1fr]">
-          <Reveal as="div" variant="left">
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-zinc-500 dark:text-zinc-400">
-              Contact
-            </p>
-            <h2 className="mt-4 text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
-              Let&apos;s <span className="text-highlight-muted">connect</span> and{" "}
-              <span className="text-highlight-muted">build something</span>{" "}
-              meaningful.
-            </h2>
-            <p className="mt-6 leading-7 text-zinc-600 dark:text-zinc-300 text-justify">
-              I'm open to freelance projects, collaborations, and opportunities to
-              create impactful digital experiences and meaningful insights.
-            </p>
+        <div className="grid items-stretch gap-10 md:grid-cols-[0.9fr_1.1fr]">
 
-            <div className="mt-8 grid gap-3">
-              {contacts.map((contact, index) => {
+          {/* Left: heading + desc + icon row */}
+          <Reveal as="div" variant="left" className="flex flex-col">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-zinc-500 dark:text-zinc-400">
+                Contact
+              </p>
+              <h2 className="mt-4 text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
+                Let&apos;s <span className="text-highlight-muted">connect</span> and{" "}
+                <span className="text-highlight-muted">build something</span>{" "}
+                meaningful.
+              </h2>
+              <p className="mt-6 leading-7 text-zinc-600 dark:text-zinc-300 text-justify">
+                I'm open to freelance projects, collaborations, and opportunities to
+                create impactful digital experiences and meaningful insights.
+              </p>
+            </div>
+
+            {/* Social icons — menyamping */}
+            <div className="mt-8 flex items-center gap-3">
+              {contacts.map((contact) => {
                 const Icon = contact.icon;
-
                 return (
-                  <Reveal
-                    as="a"
+                  <a
                     key={contact.label}
                     href={contact.href}
                     target={contact.href.startsWith("http") ? "_blank" : undefined}
                     rel={contact.href.startsWith("http") ? "noreferrer" : undefined}
-                    variant="soft"
-                    delay={index * 90}
-                    className="group flex items-center justify-between rounded-2xl border border-zinc-200 bg-white/75 px-5 py-3.5 transition hover:-translate-y-0.5 hover:border-zinc-300 hover:bg-zinc-900 hover:text-zinc-50 dark:border-zinc-800 dark:bg-zinc-900/70 dark:hover:border-zinc-700 dark:hover:bg-zinc-100 dark:hover:text-zinc-950"
+                    aria-label={contact.label}
+                    className="group flex h-14 w-14 items-center justify-center rounded-full border border-zinc-200 bg-white/75 transition hover:-translate-y-0.5 hover:border-zinc-300 hover:bg-zinc-900 dark:border-zinc-800 dark:bg-zinc-900/70 dark:hover:border-zinc-700 dark:hover:bg-zinc-100"
                   >
-                    <Icon className="h-4 w-4 text-zinc-400 transition group-hover:text-zinc-300 dark:text-zinc-500 dark:group-hover:text-zinc-700" />
-                    <span className="text-sm font-semibold">{contact.label}</span>
-                  </Reveal>
+                    <Icon className="h-6 w-6 text-zinc-500 transition group-hover:text-zinc-50 dark:text-zinc-400 dark:group-hover:text-zinc-950" />
+                  </a>
                 );
               })}
             </div>
           </Reveal>
 
-          <Reveal as="div" variant="right" delay={100}>
+          {/* Right: form */}
+          <Reveal as="div" variant="right" delay={100} className="flex flex-col">
             <form
               ref={formRef}
               onSubmit={handleSubmit}
-              className="flex flex-col gap-4 rounded-4xl border border-zinc-200 bg-white/75 p-8 dark:border-zinc-800 dark:bg-zinc-900/70"
+              className="flex flex-1 flex-col gap-4 rounded-4xl border border-zinc-200 bg-white/75 p-8 dark:border-zinc-800 dark:bg-zinc-900/70"
             >
               <h3 className="text-lg font-bold tracking-tight">Send a message</h3>
 
@@ -141,19 +143,18 @@ function Contact() {
                 />
               </div>
 
-              <div className="flex flex-col gap-1.5">
+              <div className="flex flex-1 flex-col gap-1.5">
                 <label htmlFor="message" className="text-xs font-semibold uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
                   Message
                 </label>
                 <textarea
                   id="message"
                   name="message"
-                  rows={4}
                   required
                   value={form.message}
                   onChange={handleChange}
                   placeholder="What's on your mind?"
-                  className="resize-none rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-sm outline-none transition focus:border-zinc-400 focus:ring-2 focus:ring-zinc-200 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 dark:focus:border-zinc-500 dark:focus:ring-zinc-700"
+                  className="flex-1 resize-none rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-sm outline-none transition focus:border-zinc-400 focus:ring-2 focus:ring-zinc-200 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 dark:focus:border-zinc-500 dark:focus:ring-zinc-700"
                 />
               </div>
 
@@ -195,6 +196,7 @@ function Contact() {
               )}
             </form>
           </Reveal>
+
         </div>
       </div>
     </section>
