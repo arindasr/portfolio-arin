@@ -54,7 +54,7 @@ function Projects() {
           </Reveal>
         </div>
 
-        <div className="mt-12 flex flex-wrap justify-center gap-5">
+        <div className="mt-12 flex flex-wrap justify-start gap-5">
           {projects.map((project, index) => (
             <Reveal
               as="article"
